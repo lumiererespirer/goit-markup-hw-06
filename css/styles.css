@@ -542,8 +542,8 @@ p {
 
     width: 528px;
     min-height: 581px;
+    padding: 40px;
 
-    
     background-color: #ffffff;
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
@@ -583,12 +583,7 @@ p {
     fill: var(--accent-color);
 }
 
-.form-container {
-    width: 100%;
-    padding: 40px;
-}
-
-.form-message {
+.form-title {
     display: block;
     margin-bottom: 12px;
 
@@ -601,8 +596,11 @@ p {
 }
 
 .form-field {
-    position: relative;
     margin-bottom: 10px;
+}
+
+.input-wrap {
+    position: relative;
 }
 
 .modal-form-label {
@@ -627,13 +625,16 @@ p {
     border: 1px solid rgba(33, 33, 33, 0.2);
     border-radius: 4px;
 
+    outline: none;
+
     transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-form-icon {
     position: absolute;
-    top: 50%;
     left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
 
     transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -642,20 +643,23 @@ p {
     margin-bottom: 20px;
 }
 
-.comment-input {
+.comment-text {
     resize: none;
     width: 100%;
+    height: 120px;
     margin: 0;
     padding: 12px 16px;
 
     border: 1px solid rgba(33, 33, 33, 0.2);
     border-radius: 4px;
 
+    outline: none;
+
     transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .form-input:focus,
-.comment-input:focus {
+.comment-text:focus {
     border: 1px solid #2196F3;
 }
 
@@ -663,7 +667,7 @@ p {
     fill: var(--accent-color);
 }
 
-.comment-input::placeholder {
+.comment-text::placeholder {
     font-weight: 400;
     font-size: 12px;
     line-height: 1.17;
@@ -702,7 +706,7 @@ p {
     width: 16px;
     height: 15px;
     border: 2px solid var(--nav-link-color);
-    border-radius: 4px;
+    border-radius: 3px;
     margin-right: 8px;
 
     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -713,8 +717,13 @@ p {
     background-color: var(--accent-color);
     background-image: url(../img/check-full-size.svg);
     background-size: contain;
+    background-repeat: no-repeat;
     background-position: center;
     background-origin: border-box;
+}
+
+.checkbox:focus + checkbox-icon {
+    border-color: var(--accent-color);
 }
 
 .terms-link {
